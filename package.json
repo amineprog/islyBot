@@ -1,0 +1,33 @@
+{
+  "name": "islybot",
+  "version": "1.0.0",
+  "description": "messenger Robot",
+  "main": "app.js",
+  "scripts": {
+    "test": "haha no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amineprog/islybot.git"
+  },
+  "keywords": [
+    "isly",
+    "bot",
+    "facebook",
+    "messenger",
+    "messenger",
+    "bot"
+  ],
+  "author": "amine rifi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amineprog/islybot/issues"
+  },
+  "homepage": "https://github.com/amineprog/islybot#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}
