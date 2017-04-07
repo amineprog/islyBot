@@ -4,7 +4,7 @@
   "description": "messenger Robot",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "haha no"
   },
   "repository": {
