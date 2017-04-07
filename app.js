@@ -22,25 +22,32 @@ var Product = mongoose.model('Products', ProductSchema);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', function (req, res) {
-    var produit = new Product({
-        'name': 'product1',
-        'desctiption': 'description 1',
-        'marque': 'marque 1',
-        'type': 'type 1',
-        'image': 'https://blooming-taiga-15564.herokuapp.com/',
-        'price': 250,
-        'qte': 1200
-    });
-    produit.save(function (err, resource) {
+    /* var produit = new Product({
+         'name': 'product1',
+         'desctiption': 'description 1',
+         'marque': 'marque 1',
+         'type': 'type 1',
+         'image': 'https://blooming-taiga-15564.herokuapp.com/',
+         'price': 250,
+         'qte': 1200
+     });
+     produit.save(function (err, resource) {
+         if (err) {
+             console.log(err);
+             //response.send(err).status(501);
+         } else {
+             //response.json(resource).status(201);
+            console.log('ok');
+         }
+     });*/
+    Product.find({}, function (err, resources) {
         if (err) {
-            console.log(err);
-            //response.send(err).status(501);
+            res.send(err).status(404);
         } else {
-            //response.json(resource).status(201);
-           console.log('ok');
+            res.send(resources).status(200);
         }
     });
-    res.send('Isly Bot for facebook messenger')
+    //res.send('Isly Bot for facebook messenger')
 });
 
 app.get('/webhook', function (req, res) {
