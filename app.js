@@ -3,7 +3,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var request = require('request');
 // database init
-var DB = "mongodb://aminerifi:aitammart,20,20@ds143030.mlab.com:43030/islybot";
+var DB = "mongodb://aminerifi:aitammart2020@ds143030.mlab.com:43030/islybot";
 var mongoose = require('mongoose');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
