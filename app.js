@@ -22,9 +22,10 @@ app.get('/', function (req, res) {
     produit.save(function (err, resource) {
         if (err) {
             console.log(err);
-            response.send(err).status(501);
+            //response.send(err).status(501);
         } else {
-            response.json(resource).status(201);
+            //response.json(resource).status(201);
+            res.send('OK');
         }
     });
     res.send('Isly Bot for facebook messenger')
