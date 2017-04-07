@@ -1,7 +1,10 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-var request=require('request');
+var request = require('request');
+// database init
+var DB = "mongodb://aminerifi:aitammart,20,20@ds143030.mlab.com:43030/islybot";
+var mongoose = require('mongoose');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', function (req, res) {
@@ -162,6 +165,15 @@ function sendGenericMessage(recipientId) {
 
     callSendAPI(messageData);
 }
+
+
+mongoose.connect(DB, function (err) {
+    if (err) {
+        return err;
+    } else {
+        console.log('Successfully connected to ' + DB);
+    }
+});
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Example app listening on port 3000!');
