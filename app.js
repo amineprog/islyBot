@@ -5,9 +5,28 @@ var request = require('request');
 // database init
 var DB = "mongodb://aminerifi:aitammart2020@ds143030.mlab.com:43030/islybot";
 var mongoose = require('mongoose');
+// load Database model
+var Product = require('./models/product.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', function (req, res) {
+    var produit = new Product({
+        'name': 'product1',
+        'desctiption': 'description 1',
+        'marque': 'marque 1',
+        'type': 'type 1',
+        'image': 'https://blooming-taiga-15564.herokuapp.com/',
+        'price': 250,
+        'qte': 1200
+    });
+    produit.save(function (err, resource) {
+        if (err) {
+            console.log(err);
+            response.send(err).status(501);
+        } else {
+            response.json(resource).status(201);
+        }
+    });
     res.send('Isly Bot for facebook messenger')
 });
 
