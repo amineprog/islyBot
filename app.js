@@ -6,18 +6,7 @@ var request = require('request');
 var DB = "mongodb://aminerifi:aitammart2020@ds143030.mlab.com:43030/islybot";
 var mongoose = require('mongoose');
 // load Database model
-var Schema = mongoose.Schema;
-var ProductSchema = new Schema({
-    name: String,
-    description: String,
-    marque: String,
-    type: String,
-    image: String,
-    price: Number,
-    qte: Number
-});
-
-var Product = mongoose.model('Products', ProductSchema);
+var Product = require('./models/product.js');
 // 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
