@@ -166,10 +166,10 @@ function sendGenericMessage(recipientId) {
     callSendAPI(messageData);
 }
 
-
 mongoose.connect(DB, function (err) {
     if (err) {
-        return err;
+        console.log(err);
+        // return err;
     } else {
         console.log('Successfully connected to ' + DB);
     }
