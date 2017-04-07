@@ -37,7 +37,7 @@ app.get('/', function (req, res) {
             //response.send(err).status(501);
         } else {
             //response.json(resource).status(201);
-            res.send('OK');
+           console.log('ok');
         }
     });
     res.send('Isly Bot for facebook messenger')
