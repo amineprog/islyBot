@@ -17,7 +17,7 @@ var ProductSchema = new Schema({
     qte: Number
 });
 
-var Product = mongoose.model('Products', ProduitSchema);
+var Product = mongoose.model('Products', ProductSchema);
 // 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
